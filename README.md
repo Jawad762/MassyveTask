@@ -26,3 +26,7 @@ Technical assessment overview
 - Implemented a higher-order component (HOC) to check user authentication and protect client-side routes.
 
 - Managed user authentication state and redirected unauthenticated users to login.
+
+-Deployment
+
+-Deployed a web service instance to render where Next.js is served from express, to ensure cookies can be transmitted.
