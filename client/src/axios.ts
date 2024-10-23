@@ -7,6 +7,8 @@ export const api = axios.create({
     withCredentials: true,
 });
 
+// intercept the api response below, if we recieve a 401 response,
+// we know that our access token is expired and we request a new one
 api.interceptors.response.use(
     (response) => {
         return response;

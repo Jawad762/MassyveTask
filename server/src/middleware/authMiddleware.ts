@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import { IUser } from '../types/types';
 
+// intercept user requests and check user auth status
 export const authMiddleware = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const accessToken = req.cookies.access_token;
