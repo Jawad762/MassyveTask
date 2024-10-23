@@ -29,4 +29,4 @@ Technical assessment overview
 
 -Deployment
 
--Deployed a web service instance to render where Next.js is served from express, to ensure cookies can be transmitted.
+- Deployed a web service instance to render where Next.js is served from express, to ensure cookies can be transmitted.
