@@ -1,9 +1,8 @@
 import axios from 'axios';
 import { store } from './components/Shared/ReduxProvider';
-import { API_URL } from './constants';
 
 export const api = axios.create({
-    baseURL: API_URL,
+    baseURL: '/api',
     withCredentials: true,
 });
 
@@ -19,7 +18,7 @@ api.interceptors.response.use(
         if (error.response.status === 401 && !originalRequest._retry) {
             originalRequest._retry = true;
             try {
-                await axios.post(`${API_URL}/auth/refresh`, {}, { withCredentials: true });
+                await axios.post(`/api/auth/refresh`, {}, { withCredentials: true });
                 return api(originalRequest);
             } catch (err) {
                 window.location.href = '/auth/login'
