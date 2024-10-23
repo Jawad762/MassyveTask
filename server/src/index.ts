@@ -8,7 +8,7 @@ import cookieParser from 'cookie-parser'
 import { authMiddleware } from './middleware/authMiddleware'
 dotenv.config()
 
-const PORT = 8000
+const PORT = process.env.port
 const app = express()
 
 const dbConnectionString = process.env.MONGODB_CONNECTION_STRING
@@ -26,7 +26,7 @@ if (dbConnectionString) {
 }
 
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: process.env.CLIENT_URL,
     credentials: true
 }))
 app.use(cookieParser())
