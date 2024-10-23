@@ -8,7 +8,7 @@ import cookieParser from 'cookie-parser'
 import { authMiddleware } from './middleware/authMiddleware'
 dotenv.config()
 
-const PORT = process.env.port
+const PORT = process.env.PORT
 const app = express()
 
 const dbConnectionString = process.env.MONGODB_CONNECTION_STRING
