@@ -6,6 +6,7 @@ import userRoutes from './routes/userRoute';
 import cookieParser from 'cookie-parser';
 import { authMiddleware } from './middleware/authMiddleware';
 import path from 'path';
+import cors from 'cors'
 
 dotenv.config();
 
@@ -27,6 +28,11 @@ if (dbConnectionString) {
         console.error('Connection error', err);
     });
 }
+
+app.use(cors({
+    origin: process.env.CLIENT_URL,
+    credentials: true
+}))
 
 app.use(cookieParser());
 app.use(express.json());
