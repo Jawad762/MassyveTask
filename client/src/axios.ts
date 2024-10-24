@@ -18,7 +18,7 @@ api.interceptors.response.use(
         if (error.response.status === 401 && !originalRequest._retry) {
             originalRequest._retry = true;
             try {
-                await axios.post(`/api/auth/refresh`, {}, { withCredentials: true });
+                await axios.post(`/api/auth/refresh-token`, {}, { withCredentials: true });
                 return api(originalRequest);
             } catch (err) {
                 window.location.href = '/auth/login'
